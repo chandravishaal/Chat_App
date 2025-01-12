@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';//parse Cookie header and populate req.
 
 
 import authRoutes from './routes/auth.routes.js';
+import messageRoutes from './routes/message.route.js';
 import {connectDB} from './lib/db.js';
 
 
@@ -17,6 +18,7 @@ app.use(cookieParser());    // Parse Cookie header and populate req.cookies with
 
 
 app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
 
 
 app.listen(PORT, () => {
